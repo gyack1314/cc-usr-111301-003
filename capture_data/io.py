@@ -17,7 +17,9 @@ def asset(root,ref):
 
 class Source:
     """固定版本字节范围读取器，记录实际请求。"""
-    def __init__(self,root,ref):self.raw=asset(root,ref);self.sha256=ref['sha256'];self.calls=[]
+    def __init__(self,root,ref):
+        self.raw=asset(root,ref);self.sha256=ref['sha256'];self.calls=[]
+        self.length=len(self.raw);self.identity={'sha256':self.sha256,'length':self.length}
     def read_at(self,start,length):
         if type(start) is not int or type(length) is not int or start<0 or length<0 or start+length>len(self.raw):raise ValueError('范围越界')
         self.calls.append({'start':start,'length':length});return self.raw[start:start+length]
