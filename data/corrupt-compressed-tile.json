@@ -1,0 +1,24 @@
+{
+  "kind": "geotiff-window",
+  "assets": [
+    {
+      "path": "bad-deflate.tif",
+      "bytes": 312,
+      "sha256": "6454cd7234e297540f39da684bf3d37eb167683a98136db97bb9c21bdb31ab14"
+    }
+  ],
+  "source": {
+    "path": "bad-deflate.tif",
+    "bytes": 312,
+    "sha256": "6454cd7234e297540f39da684bf3d37eb167683a98136db97bb9c21bdb31ab14"
+  },
+  "ifd_index": 0,
+  "window": {
+    "row_start": 0,
+    "row_stop": 2,
+    "col_start": 1,
+    "col_stop": 3
+  },
+  "read_budget": 4096,
+  "max_decoded_tile_bytes": 1024
+}

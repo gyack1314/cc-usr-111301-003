@@ -1,0 +1,24 @@
+{
+  "kind": "geotiff-window",
+  "assets": [
+    {
+      "path": "big-endian.tif",
+      "bytes": 312,
+      "sha256": "38247943bf248eafe21f6f48ff4147f7a9db2a4a3ea0009e756a6494cbfe612d"
+    }
+  ],
+  "source": {
+    "path": "big-endian.tif",
+    "bytes": 312,
+    "sha256": "38247943bf248eafe21f6f48ff4147f7a9db2a4a3ea0009e756a6494cbfe612d"
+  },
+  "ifd_index": 0,
+  "window": {
+    "row_start": 1,
+    "row_stop": 2,
+    "col_start": 2,
+    "col_stop": 3
+  },
+  "read_budget": 4096,
+  "max_decoded_tile_bytes": 1024
+}

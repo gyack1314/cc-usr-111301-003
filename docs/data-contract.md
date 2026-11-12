@@ -1,0 +1,7 @@
+# TIFF窗口资料
+
+窗口均为(row_start,row_stop,col_start,col_stop)半开整数。主图3列2行，每像素两通道unsigned16，文件大端，tile宽高各2。ExtraSamples=0代表第二通道未解释，所有通道原值均采集。tile边缘填充存在于压缩块中，不属于图像窗口。
+
+经典TIFF字段类型支持BYTE/ASCII/SHORT/LONG/RATIONAL/DOUBLE的目录取值，未解释tag保留原值与范围；关键像素布局tag不得重复。Predictor2重置在每个tile每行起点，各通道以前一像素同通道为基准。压缩8为zlib封装Deflate，不是raw Deflate。无须做GeoKey坐标转换，GeoKeyDirectory、ModelPixelScale和GDAL_NODATA原文保留。
+
+read_at允许合并相邻范围但不得借一次整对象读取掩盖tile粒度效果。源长度和sha来自可信对象清单，范围适配器绑定该版本；生产接入中须验证返回Content-Range和对象身份。初始Source只对本地冻结资产开放同等read_at，不解析TIFF。坏块是域操作时应发现的源错误，材料本身sha正确。
